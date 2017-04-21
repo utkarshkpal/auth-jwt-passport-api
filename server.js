@@ -9,15 +9,15 @@ const router = require('./router');
 const mongoose = require('mongoose');
 
 //DB setup
-mongoose.connect('mongodb://localhost:auth/auth');
+mongoose.connect('mongodb://utk93:utk123@ds133450.mlab.com:33450/user-data');
 
 //App Setup
-app.use(morgan('combined')); //morgan is used for logs (debugging)
+//morgan is used for logs (debugging)
 app.use(bodyParser.json({type:'*/*'}));
 router(app);
 
 //Server Setup
-const port = process.env.PORT || 3090;
+const port = process.env.PORT || 8080;
 const server = http.createServer(app);
 server.listen(port);
 console.log('Server listening on :', port);
